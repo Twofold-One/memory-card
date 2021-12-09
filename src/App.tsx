@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Score from './components/Score';
+
+// Components required
+// Header component (includes title, description and Score component);
+// Score component (includes scores and best score);
+// Main component (includes 10 Card components);
+// Card component (includes image and short description);
 
 function App() {
+    const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Score score={score} bestScore={bestScore} />
+        </>
     );
 }
 
