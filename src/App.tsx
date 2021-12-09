@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from './components/styles/global_styles/theme';
 import Score from './components/Score';
+import GlobalStyles from './components/styles/global_styles/Global';
 
 // Components required
 // Header component (includes title, description and Score component);
@@ -12,9 +15,12 @@ function App() {
     const [bestScore, setBestScore] = useState(0);
 
     return (
-        <>
-            <Score score={score} bestScore={bestScore} />
-        </>
+        <ThemeProvider theme={theme}>
+            <>
+                <GlobalStyles />
+                <Score score={score} bestScore={bestScore} />
+            </>
+        </ThemeProvider>
     );
 }
 
