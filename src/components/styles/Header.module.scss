@@ -1,0 +1,27 @@
+@use '/src/global_styles/color';
+@use '/src/global_styles/font';
+
+.header {
+    background-color: color.$primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0, 0.15);
+    color: black;
+
+    h1 {
+        font-family: font.$header-font;
+    }
+}
+
+img {
+    height: 100px;
+    border-radius: 10px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+}

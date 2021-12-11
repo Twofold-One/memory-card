@@ -1,0 +1,6 @@
+@use '/src/global_styles/color';
+
+.footer {
+    background-color: color.$dark;
+    text-align: center;
+}

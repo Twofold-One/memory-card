@@ -1,0 +1,27 @@
+@use '/src/global_styles/color';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    background-color: color.$light;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

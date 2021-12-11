@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import theme from './components/styles/global_styles/theme';
-import Score from './components/Score';
-import GlobalStyles from './components/styles/global_styles/Global';
+import './global_styles/App.scss';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 // Components required
 // Header component (includes title, description and Score component);
@@ -10,18 +10,17 @@ import GlobalStyles from './components/styles/global_styles/Global';
 // Main component (includes 10 Card components);
 // Card component (includes image and short description);
 
-function App() {
+const App = () => {
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
 
     return (
-        <ThemeProvider theme={theme}>
-            <>
-                <GlobalStyles />
-                <Score score={score} bestScore={bestScore} />
-            </>
-        </ThemeProvider>
+        <>
+            <Header score={score} bestScore={bestScore} />
+            <Main />
+            <Footer />
+        </>
     );
-}
+};
 
 export default App;
