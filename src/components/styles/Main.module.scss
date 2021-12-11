@@ -1,1 +1,8 @@
 @use '/src/global_styles/color';
+
+.main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

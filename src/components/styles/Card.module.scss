@@ -1,0 +1,49 @@
+@use '/src/global_styles/color';
+
+.card {
+    border: 5px solid color.$dark;
+    background-color: color.$secondary;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    margin: 50px;
+    box-shadow: 0 0 50px rgba(55, 71, 79, 0.2);
+
+    img {
+        background-size: 100%;
+        width: 100%;
+        height: auto;
+        opacity: 0.8;
+    }
+
+    figcaption {
+        padding: 20px;
+        font-size: 2rem;
+        height: 50%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.card:hover {
+    cursor: pointer;
+
+    img {
+        opacity: 1;
+        filter: drop-shadow(0 0 10px white);
+    }
+
+    figcaption {
+        text-shadow: 0 0 5px white;
+    }
+}
+
+.card:active {
+    transform: scale(0.9);
+}
