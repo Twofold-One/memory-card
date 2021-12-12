@@ -22,6 +22,14 @@ body {
     background-color: color.$light;
 }
 
+// trick to correctly place footer
+// height is a footer height
+body::after {
+    content: '';
+    display: block;
+    height: 55px;
+}
+
 a {
     text-decoration: none;
     color: inherit;

@@ -29,24 +29,25 @@ const App = () => {
 
     useEffect(() => {
         setDeck(shuffleArray(cards));
-        // console.log(clickedCards);
-        console.log(`Score: ${score}`);
-    }, [clickedCards, score]);
+        if (score > bestScore) {
+            setBestScore(score);
+        }
+    }, [clickedCards, score, bestScore]);
 
     const handleCardClick = (id: string) => {
         const clickedCard = deck.find((card) => card.id === Number(id));
         const prevState = clickedCards.slice();
-        console.log(prevState);
-        const newState = [...prevState, clickedCard];
-        console.log(newState);
-        // if (cardRepeatCheck(newState, prevState)) {
-        //     console.log('repetition detected');
-        //     setScore(0);
-        //     setClickedCards([]);
-        //     return;
-        // }
-        setClickedCards([...prevState, clickedCard]);
+        if (cardRepeatCheck(clickedCard, prevState)) {
+            // TODO some window showing when best score is 9
+            // maybe some sort of the win streak in header
+            // window you are rock star! and some gif from giphy
+            console.log('repetition detected');
+            setScore(0);
+            setClickedCards([]);
+            return;
+        }
         setScore(score + 1);
+        setClickedCards([...prevState, clickedCard]);
     };
 
     return (

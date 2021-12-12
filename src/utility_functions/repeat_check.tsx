@@ -1,4 +1,9 @@
-export const cardRepeatCheck = (arr1: any[], arr2: any[]) => {
-    const check = arr1.some((element) => arr2.includes(element));
+import { Card } from '../App';
+
+export const cardRepeatCheck = (
+    element: Card | undefined,
+    arr: any
+): boolean => {
+    const check = arr.includes(element);
     return check;
 };

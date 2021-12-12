@@ -1,4 +1,4 @@
-// For array elements shuffling hs been used implementation of
+// For array elements shuffling has been used implementation of
 // Durstenfeld shuffle, an optimized version of Fisher-Yates
 // algorithm.
 

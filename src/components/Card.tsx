@@ -11,7 +11,6 @@ interface CardProps {
 
 const Card = ({ id, src, alt, text, handleCardClick }: CardProps) => {
     const onCardClick = (event: React.MouseEvent) => {
-        console.log(event.currentTarget.id);
         const id = event.currentTarget.id;
         handleCardClick(id);
     };

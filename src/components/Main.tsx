@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles/Main.module.scss';
 import Card from './Card';
 import type { Cards } from '../App';
