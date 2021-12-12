@@ -1,13 +1,18 @@
+import React, { MouseEvent } from 'react';
 import styles from './styles/Main.module.scss';
 import Card from './Card';
-import { cards } from '../cards_information/cards';
+import type { Cards } from '../App';
 
-const Main = () => {
-    // onclick = () => {
+interface MainProps {
+    deck: Cards;
+}
 
+const Main = ({ deck }: MainProps) => {
+    // const handleCardClick = (event) => {
+    //     console.log(event);
     // };
 
-    const renderCards = cards.map((card) => (
+    const renderCards = deck.map((card) => (
         <Card key={card.id} src={card.src} alt={card.alt} text={card.text} />
     ));
 

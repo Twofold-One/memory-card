@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './styles/Card.module.scss';
 
 interface CardProps {
@@ -7,8 +8,12 @@ interface CardProps {
 }
 
 const Card = ({ src, alt, text }: CardProps) => {
+    const onCardClick = (event: React.MouseEvent<HTMLElement>) => {
+        console.log(event.target);
+    };
+
     return (
-        <figure className={styles.card}>
+        <figure className={styles.card} onClick={onCardClick}>
             <img src={src} alt={alt}></img>
             <figcaption>{text}</figcaption>
         </figure>
