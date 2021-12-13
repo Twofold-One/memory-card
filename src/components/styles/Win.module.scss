@@ -1,0 +1,48 @@
+@use '/src/global_styles/color';
+@use '/src/global_styles/font';
+
+.win {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: white;
+    background-color: black;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    h1 {
+        text-align: center;
+        font-family: font.$header-font;
+        font-size: 5rem;
+    }
+
+    img {
+        width: 500px;
+        height: 500px;
+    }
+
+    button {
+        margin: 30px;
+        padding: 20px;
+        background-color: color.$secondary;
+        color: white;
+        font-family: font.$header-font;
+        font-size: 3rem;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        text-shadow: 0 0 30px white;
+        cursor: pointer;
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+}

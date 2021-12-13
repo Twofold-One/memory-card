@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { cards } from './cards_information/cards';
 import { shuffleArray } from './utility_functions/array_shuffle';
 import { cardRepeatCheck } from './utility_functions/repeat_check';
+import Win from './components/Win';
 
 export type Cards = Array<{
     id: number;
@@ -34,14 +35,16 @@ const App = () => {
         }
     }, [clickedCards, score, bestScore]);
 
+    const returnToMainScreen = () => {
+        setScore(0);
+        setBestScore(0);
+        setClickedCards([]);
+    };
+
     const handleCardClick = (id: string) => {
         const clickedCard = deck.find((card) => card.id === Number(id));
         const prevState = clickedCards.slice();
         if (cardRepeatCheck(clickedCard, prevState)) {
-            // TODO some window showing when best score is 9
-            // maybe some sort of the win streak in header
-            // window you are rock star! and some gif from giphy
-            console.log('repetition detected');
             setScore(0);
             setClickedCards([]);
             return;
@@ -54,6 +57,10 @@ const App = () => {
         <>
             <Header score={score} bestScore={bestScore} />
             <Main deck={deck} handleCardClick={handleCardClick} />
+            <Win
+                isWin={bestScore === 9 ? true : false}
+                returnToMainScreen={returnToMainScreen}
+            />
             <Footer />
         </>
     );
