@@ -4,6 +4,8 @@ In the game, you will choose cards that illustrate different guitar shapes. The 
 
 [Live app](https://twofold-one.github.io/memory-card/)
 
+![Animation](https://user-images.githubusercontent.com/87330747/146094696-b59ad99c-470e-496e-bd9a-79d7edd6ff6a.gif)
+
 ### Get started
 
 `git clone https://github.com/Twofold-One/memory-card.git`
